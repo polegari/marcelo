@@ -172,38 +172,37 @@
       transform: rotateZ(-45deg) scaleX(1.4) translate(4px, -4px);
     }
 
-    .menu {
-      position: absolute;
-      top: 70px;
-      left: 0;
-      background-color: #333;
-      width: 200px;
-      padding: 20px;
-      display: none;
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+    * {
+      margin: 0 auto;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
     }
 
-    .active .menu {
-      display: block;
+    #menu-h {
+      background-color: rgb(37, 37, 39);
     }
 
-    .menu ul {
+    #menu-h ul {
+      max-width: 800px;
       list-style: none;
-      margin: 0;
       padding: 0;
     }
 
-    .menu li {
-      margin-bottom: 10px;
+    #menu-h ul li {
+      display: inline;
     }
 
-    .menu a {
-      color: #fff;
+    #menu-h ul li a {
+      color: #FFF;
+      padding: 20px;
+      display: inline-block;
       text-decoration: none;
+      transition: background .4s;
     }
 
-    .menu a:hover {
-      color: #ccc;
-    }
 
     .tabelapedidos {
       margin-left: 200px;
@@ -232,38 +231,27 @@
 </head>
 
 <body>
-  <div class="container">
-    <!-- Menu Hamburger -->
-    <div class="btn">
-      <div class="btn-left"></div>
-      <div class="btn-right"></div>
-    </div>
-    <div class="menu">
-      <!-- Opções do menu -->
-      <ul>
-        <li><a href="#">INÍCIO</a></li>
-        <li>
-          <a href="#">CADASTRO DE CLIENTES</a>
-          <ul>
-            <!-- <li><a href="#">ALTERAR TEXTO</a></li> -->
-          </ul>
-        </li>
-        <li>
-          <a href="#">PEDIDOS</a>
-          <ul>
-            <!-- <li><a href="#">ALTERAR TEXTO</a></li> -->
-          </ul>
-        </li>
-        <li>
-          <a href="#">CONTATO</a>
-          <ul>
-            <!-- <li><a href="#">ALTERAR TEXTO</a></li> -->
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
+  <nav id="menu-h">
+    <ul>
+      <li>
+        <a href="pedidos.html">
+          Pedidos
+        </a>
+      </li>
+
+      <li><a href="cadastro.html">Cadastro de Clientes</a></li>
+
+      <li><a href="#">Quem Somos</a></li>
+
+      <li><a href="#">Contato</a></li>
+
+
+    </ul>
+  </nav>
   <br /><br /><br /><br /><br />
+
+
+
 
   <!-- Tabela de pedidos -->
   <table class="tabelapedidos">
@@ -415,6 +403,7 @@
       </td>
     </tr>
   </table>
+
 
   <!-- Tabela de resultados -->
   <p><em> PEDIDOS</em></p>
