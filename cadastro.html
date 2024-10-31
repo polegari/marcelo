@@ -8,6 +8,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      background: #deb887;
     }
 
     #conteudo {
@@ -25,22 +26,78 @@
     #adicionar {
       display: none;
     }
+
+    #salvar {
+      display: none;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+    * {
+      margin: 0 auto;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    #menu-h {
+      background-color: rgb(37, 37, 39);
+    }
+
+    #menu-h ul {
+      max-width: 800px;
+      list-style: none;
+      padding: 0;
+    }
+
+    #menu-h ul li {
+      display: inline;
+    }
+
+    #menu-h ul li a {
+      color: #FFF;
+      padding: 20px;
+      display: inline-block;
+      text-decoration: none;
+      transition: background .4s;
+    }
   </style>
 </head>
 
 <body>
-  <h1>Upload de Arquivo</h1>
+
+  <nav id="menu-h">
+    <ul>
+      <li>
+        <a href="pedidos.html">
+          Pedidos
+        </a>
+      </li>
+
+      <li><a href="cadastro.html">Cadastro de Clientes</a></li>
+
+      <li><a href="#">Quem Somos</a></li>
+
+      <li><a href="#">Contato</a></li>
+
+
+    </ul>
+  </nav>
+  <br /><br /><br /><br /><br />
+
+  <h1>CADASTRAR / EDITAR / REMOVER CLIENTES</h1>
   <form id="form-upload">
-    <input type="file" id="arquivo" accept=".json">
-    <button id="botao-upload">Upload</button>
+    <label for="arquivo">Selecione o arquivo JSON:</label>
+    <input type="file" id="arquivo" accept=".json" required>
+    <button type="submit" id="botao-upload">Upload</button>
   </form>
   <div id="conteudo"></div>
   <button id="editar" onclick="editarDados()">Editar</button>
-  <button id="adicionar" onclick="adicionarDados()">Adicionar</button>
-  <div id="editar-conteudo" style="display:none;"></div>
-  <button id="salvar" onclick="salvarDados()" style="display:none;">Salvar</button>
+  <button type="submit" id="adicionar" onclick="adicionarDados()">Adicionar</button>
+  <div id="editar-conteudo"></div>
+  <button id="salvar" onclick="salvarDados()">Salvar</button>
 
-  
+
   <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
   <script>
     const form = document.getElementById('form-upload');
